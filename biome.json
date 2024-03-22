@@ -1,0 +1,96 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.6.1/schema.json",
+  "files": {
+    "ignore": [
+      ".nx/**",
+      ".vscode/**",
+      "tmp/**",
+      "generated/**",
+      "android/**",
+      "ios/**",
+      "dist/**",
+      "coverage/**",
+      "project.json",
+      "tsconfig.base.json",
+      "licenses.json",
+      "tsconfig.json",
+      "nx.json"
+    ],
+    "ignoreUnknown": true
+  },
+  "formatter": {
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "organizeImports": {
+    "enabled": true,
+    "ignore": ["i18n.ts"]
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "trailingComma": "es5"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["apps/app/**", "libs/ui/**"],
+      "linter": {
+        "rules": {
+          "complexity": {
+            "noExcessiveCognitiveComplexity": "error",
+            "useSimplifiedLogicExpression": "error"
+          },
+          "correctness": {
+            "noUnusedImports": "error",
+            "noUnusedVariables": "error"
+          },
+          "suspicious": {
+            "noConsoleLog": "error"
+          },
+          "style": {
+            "useBlockStatements": "error",
+            "useCollapsedElseIf": "error",
+            "useConsistentArrayType": {
+              "level": "error",
+              "options": {
+                "syntax": "generic"
+              }
+            }
+          },
+          "nursery": {
+            "noFocusedTests": "error",
+            "noSemicolonInJsx": "error",
+            "useSortedClasses": {
+              "level": "error",
+              "options": {
+                "functions": ["cva"]
+              }
+            },
+            "noUselessTernary": "error"
+          }
+        }
+      }
+    },
+    {
+      "include": ["apps/api/**", "libs/data/**"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noConsoleLog": "off"
+          },
+          "complexity": {
+            "noForEach": "off"
+          }
+        }
+      }
+    }
+  ]
+}

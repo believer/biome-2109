@@ -1,0 +1,18 @@
+{
+  "name": "biome-2109",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "believer <rickard@nattochdag.dev>",
+  "license": "MIT",
+  "scripts": {
+    "lint:ci": "biome ci ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.1",
+    "@types/react": "^18.2.67"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
